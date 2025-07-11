@@ -69,7 +69,6 @@ a:active {
 pre {
   white-space: pre-wrap;
   font-size: calc(var(--font_size));
-  color: var(--color2);
   text-decoration: unset;
   text-transform: unset;
   font-family: "Roboto";
@@ -143,6 +142,5 @@ body {
   padding: 0px;
   font-family: "Manrope", "Roboto", Arial, Helvetica, sans-serif;
   font-size: var(--font_size);
-  color: var(--color2);
   cursor: default;
 }

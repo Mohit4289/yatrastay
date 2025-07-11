@@ -81,7 +81,7 @@ export default function Cards() {
                 src={hotel.imageUrl}
                 alt={hotel.title}
                 width={400}
-                height={300}
+                height={200}
                 className={styles.image}
                 priority={index < 2}
               />
@@ -96,30 +96,24 @@ export default function Cards() {
             <div className={styles.cardContent}>
               <h3 className={styles.title}>{hotel.title}</h3>
               <div className={styles.location}>
-                <MapPin size={30} />
+                <MapPin size={14} />
                 <span>{hotel.location}</span>
               </div>
-              <div className={styles.ratingContainer}>
-                <div className={styles.rating}>
-                  <Star size={16} fill="#FFD700" color="#FFD700" />
-                  <span>{hotel.rating}</span>
-                  <span className={styles.reviews}>
-                    ({hotel.reviews} reviews)
-                  </span>
-                </div>
+              <div className={styles.rating}>
+                <Star size={16} fill="#FFC107" color="#FFC107" />
+                <span>{hotel.rating}</span>
+                <span>({hotel.reviews} reviews)</span>
               </div>
-
               <div className={styles.amenities}>
-                {hotel.amenities?.slice(0, 4).map((amenity, i) => (
+                {hotel.amenities?.slice(0, 3).map((amenity, i) => (
                   <span key={i} className={styles.amenity}>
                     {amenity}
                   </span>
                 ))}
               </div>
-
-              <div className={styles.priceContainer}>
-                <div className={styles.buttons}>Get Details</div>
-              </div>
+              <button className={styles.getDetailsBtn}>
+                Get Details
+              </button>
             </div>
           </div>
         ))}
