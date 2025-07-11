@@ -1,7 +1,8 @@
 .heroContainer {
     margin-top: -6rem;
+    margin-bottom: 6rem;
     position: relative;
-    height: 70vh;
+    height: 50vh;
     min-height: 500px;
     width: 100%;
     display: flex;
@@ -192,7 +193,8 @@
   }
   
   .categoryButton.active {
-    background: linear-gradient(135deg, #ff4d4f, #ff7a7c);
+    /* background: linear-gradient(135deg, #ff4d4f, #ff7a7c); */
+    background-color: var(--color4);
     color: white;
     border-color: transparent;
     font-weight: 700;

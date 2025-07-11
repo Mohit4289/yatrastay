@@ -110,7 +110,7 @@
 .auth_buttons {
   display: flex;
   align-items: center;
-  background-color: var(--color3);
+  background-color: var(--color4);
   border-radius: 30px;
   padding: 4px;
   gap: 4px;

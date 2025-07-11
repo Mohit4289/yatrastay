@@ -2,15 +2,15 @@
   --color1: rgb(255, 255, 255);
   --color2: rgb(97, 97, 97);
   
-  --color3: #780000; /* Barn Red */
-  --color4: #C1121F; /* Fire Brick */
-  --color5: #FDF0D5; /* Papaya Whip */
-  --color6: #003049; /* Prussian Blue */
-  --color7: #669BBC; /* Air Superiority Blue */
+  --color3: #780000; 
+  --color4: #C1121F; 
+  --color5: #FDF0D5; 
+  --color6: #003049; 
+  --color7: #669BBC; 
   
-  --rgb_color1: 120, 0, 0; /* Barn Red */
-  --rgb_color2: 193, 18, 31; /* Fire Brick */
-  --rgb_color3: 253, 240, 213; /* Papaya Whip */
+  --rgb_color1: 120, 0, 0; 
+  --rgb_color2: 193, 18, 31; 
+  --rgb_color3: 253, 240, 213; 
   --rgb_color4: 0, 48, 73; /* Prussian Blue */
   --rgb_color5: 102, 155, 188; /* Air Superiority Blue */
 
