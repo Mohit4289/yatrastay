@@ -62,7 +62,7 @@ const Hero = () => {
 
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
-          Your journey, your stay - simplified.
+          Your journey, your stay-simplified.
         </h1>
       </div>
       
