@@ -1,6 +1,10 @@
 "use client";
 import Image from "next/image";
 import { MapPin, Star, Heart } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import styles from "./Card.module.css";
 
 interface CardProps {
@@ -74,49 +78,62 @@ export default function Cards() {
   return (
     <div className={styles.cardsContainer}>
       <div className={styles.cards}>
-        {sampleHotels.map((hotel, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.cardImage}>
-              <Image
-                src={hotel.imageUrl}
-                alt={hotel.title}
-                width={400}
-                height={200}
-                className={styles.image}
-                priority={index < 2}
-              />
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={3}
+          spaceBetween={30}
+          navigation={true}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 10 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+          }}
+        >
+          {sampleHotels.map((hotel, index) => (
+            <SwiperSlide key={index} className={styles.swiperSlide}>
+              <div key={index} className={styles.card}>
+                <div className={styles.cardImage}>
+                  <Image
+                    src={hotel.imageUrl}
+                    alt={hotel.title}
+                    width={400}
+                    height={200}
+                    className={styles.image}
+                    priority={index < 2}
+                  />
 
-              {hotel.discount && (
-                <div className={styles.discountBadge}>
-                  {hotel.discount}% OFF
+                  {hotel.discount && (
+                    <div className={styles.discountBadge}>
+                      {hotel.discount}% OFF
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
 
-            <div className={styles.cardContent}>
-              <h3 className={styles.title}>{hotel.title}</h3>
-              <div className={styles.location}>
-                <MapPin size={14} />
-                <span>{hotel.location}</span>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.title}>{hotel.title}</h3>
+                  <div className={styles.location}>
+                    <MapPin size={14} />
+                    <span>{hotel.location}</span>
+                  </div>
+                  <div className={styles.rating}>
+                    <Star size={16} fill="#FFC107" color="#FFC107" />
+                    <span>{hotel.rating}</span>
+                    <span>({hotel.reviews} reviews)</span>
+                  </div>
+                  <div className={styles.amenities}>
+                    {hotel.amenities?.slice(0, 3).map((amenity, i) => (
+                      <span key={i} className={styles.amenity}>
+                        {amenity}
+                      </span>
+                    ))}
+                  </div>
+                  <button className={styles.getDetailsBtn}>Get Details</button>
+                </div>
               </div>
-              <div className={styles.rating}>
-                <Star size={16} fill="#FFC107" color="#FFC107" />
-                <span>{hotel.rating}</span>
-                <span>({hotel.reviews} reviews)</span>
-              </div>
-              <div className={styles.amenities}>
-                {hotel.amenities?.slice(0, 3).map((amenity, i) => (
-                  <span key={i} className={styles.amenity}>
-                    {amenity}
-                  </span>
-                ))}
-              </div>
-              <button className={styles.getDetailsBtn}>
-                Get Details
-              </button>
-            </div>
-          </div>
-        ))}
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
